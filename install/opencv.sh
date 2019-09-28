@@ -21,7 +21,8 @@ apt install -y \
     libgstreamer-plugins-base1.0-dev \
     libgstreamer1.0-dev \
     libgtk2.0-dev \
-    libjasper-dev \
+    libopencv-dev \
+    # libjasper-dev \
     libjpeg-dev \
     libpng-dev \
     libswscale-dev \
