@@ -35,6 +35,7 @@ apt install -y \
     python3-dev \
     python3-numpy \
     qv4l2 \
+    unzip \
     v4l-utils \
     v4l2ucp
 
