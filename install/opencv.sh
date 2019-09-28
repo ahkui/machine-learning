@@ -86,8 +86,4 @@ fi
 make -j`nproc`
 make install
 
-apt install -y \
-    python-opencv \
-    python3-opencv
-
 rm -rf /opt/opencv_build
