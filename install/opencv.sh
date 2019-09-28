@@ -8,7 +8,7 @@ fi
 OPENCV_VERSION=${OPENCV_VERSION:-4.1.0}
 ENABLE_GPU=${ENABLE_GPU:-false}
 
-apt-get purge *libopencv* -y || true
+apt-get purge *libopencv* -y
 apt update
 apt install -y \
     build-essential \
