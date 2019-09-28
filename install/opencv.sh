@@ -7,6 +7,7 @@ fi
 
 OPENCV_VERSION=${OPENCV_VERSION:-4.1.0}
 ENABLE_GPU=${ENABLE_GPU:-false}
+DEBIAN_FRONTEND="noninteractive"
 
 apt-get purge *libopencv* -y
 apt update
