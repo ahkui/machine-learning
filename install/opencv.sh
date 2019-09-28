@@ -23,7 +23,6 @@ apt install -y \
     libgstreamer1.0-dev \
     libgtk2.0-dev \
     libopencv-dev \
-    # libjasper-dev \
     libjpeg-dev \
     libpng-dev \
     libswscale-dev \
@@ -40,6 +39,7 @@ apt install -y \
     unzip \
     v4l-utils \
     v4l2ucp
+    # libjasper-dev
 
 mkdir -p /opt/opencv_build
 cd /opt/opencv_build
