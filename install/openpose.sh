@@ -14,7 +14,9 @@ apt install -y \
     cmake \
     curl \
     git \
-    wget
+    wget \
+    python-dev \
+    python3-dev
 
 cd /opt
 
@@ -31,14 +33,17 @@ cd /opt/openpose/release
 
 if [ ${ENABLE_GPU} = true ]
 then
-    cmake -D USE_OPENCV=ON
-          -D USE_NCCL=ON
-          -D BUILD_PYTHON=ON ..
+    cmake -D USE_OPENCV=ON \
+          -D USE_NCCL=ON \
+          -D BUILD_PYTHON=ON .. \
+          -D BUILD_EXAMPLES=OFF \
+          -D BUILD_TESTS=OFF \
+          -D CMAKE_BUILD_TYPE=RELEASE
 else
-    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY .. || true
+    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE .. || true
     sed -i "362i }" ../3rdparty/caffe/src/caffe/layers/mkldnn_inner_product_layer.cpp
     sed -i "358i {" ../3rdparty/caffe/src/caffe/layers/mkldnn_inner_product_layer.cpp
-    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY ..
+    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE ..
 fi
 
 make -j`nproc`
