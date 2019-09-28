@@ -23,6 +23,8 @@ apt install -y \
     libgstreamer1.0-dev \
     libgtk2.0-dev \
     libopencv-dev \
+    libhdf5-serial-dev \
+    libhdf5-dev \
     libjpeg-dev \
     libpng-dev \
     libswscale-dev \
