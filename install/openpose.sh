@@ -8,6 +8,14 @@ fi
 ENABLE_GPU=${ENABLE_GPU:-false}
 OPENPOSE_MODELS_PROVIDER=${OPENPOSE_MODELS_PROVIDER:-http://posefs1.perception.cs.cmu.edu/OpenPose/models/}
 
+apt update
+apt install -y \
+    build-essential \
+    cmake \
+    curl \
+    git \
+    wget
+
 cd /opt
 
 git clone --depth=1 https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
