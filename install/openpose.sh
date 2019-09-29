@@ -43,12 +43,13 @@ then
           -D BUILD_PYTHON=ON .. \
           -D BUILD_EXAMPLES=OFF \
           -D BUILD_TESTS=OFF \
-          -D CMAKE_BUILD_TYPE=RELEASE
+          -D CMAKE_BUILD_TYPE=RELEASE \
+          -D CMAKE_BUILD_SHARED_LIBS=1
 else
-    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE .. || true
+    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_BUILD_SHARED_LIBS=1 .. || true
     sed -i "362i }" ../3rdparty/caffe/src/caffe/layers/mkldnn_inner_product_layer.cpp
     sed -i "358i {" ../3rdparty/caffe/src/caffe/layers/mkldnn_inner_product_layer.cpp
-    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE ..
+    cmake -D BUILD_PYTHON=ON -D GPU_MODE=CPU_ONLY -D BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_BUILD_SHARED_LIBS=1 ..
 fi
 
 make -j`nproc`
