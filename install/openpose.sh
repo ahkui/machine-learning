@@ -11,7 +11,6 @@ OPENPOSE_MODELS_PROVIDER=${OPENPOSE_MODELS_PROVIDER:-http://posefs1.perception.c
 apt update
 apt install -y \
     build-essential \
-    cmake \
     curl \
     git \
     wget \
@@ -19,6 +18,12 @@ apt install -y \
     python3-dev
 
 cd /opt
+
+wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz
+tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt
+rm cmake-3.14.2-Linux-x86_64.tar.gz
+
+export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 
 git clone --depth=1 https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
 cd openpose
