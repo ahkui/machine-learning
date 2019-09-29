@@ -39,7 +39,7 @@ rm cmake-3.14.2-Linux-x86_64.tar.gz
 
 export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 export PYTHONPATH=/usr/local/python:$PYTHONPATH
-echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' >> /etc/profile
+echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' > /etc/profile.d/02-add-python-path.sh
 
 git clone --depth=1 https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
 cd openpose
