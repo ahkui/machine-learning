@@ -48,6 +48,7 @@ cd openpose
 git submodule update --init --recursive
 cd models
 sed -i "s,http://posefs1.perception.cs.cmu.edu/OpenPose/models/,$OPENPOSE_MODELS_PROVIDER,g" getModels.sh
+./getModels.sh
 cd ..
 mkdir release
 
