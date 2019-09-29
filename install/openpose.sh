@@ -39,7 +39,20 @@ rm cmake-3.14.2-Linux-x86_64.tar.gz
 
 export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 export PYTHONPATH=/usr/local/python:$PYTHONPATH
-echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' > /etc/profile.d/02-add-python-path.sh
+
+if [[ -z "${BASH}" ]]
+then
+    echo 'export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"' >> ~/.bashrc
+    echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' >> ~/.bashrc
+    source ~/.bashrc
+elif [[ -z "${ZSH_NAME}" ]]
+then
+    echo 'export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"' >> ~/.zshrc
+    echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' >> ~/.zshrc
+    source ~/.zshrc
+else
+    echo "Please set this environment variable 'PYTHONPATH=/usr/local/python:\$PYTHONPATH'"
+fi
 
 git clone --depth=1 https://github.com/CMU-Perceptual-Computing-Lab/openpose.git
 cd openpose
