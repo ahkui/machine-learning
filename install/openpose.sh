@@ -21,8 +21,7 @@ apt install -y --no-install-recommends \
     libprotobuf-dev \
     protobuf-compiler \
     python-dev \
-    python3-dev \
-    wget
+    python3-dev
 
 if [ ${ENABLE_GPU} = true ]
 then
@@ -33,7 +32,7 @@ fi
 
 cd /opt
 
-wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz
+curl -L https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz -o cmake-3.14.2-Linux-x86_64.tar.gz
 tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt
 rm cmake-3.14.2-Linux-x86_64.tar.gz
 
