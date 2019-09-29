@@ -33,3 +33,19 @@ curl -L https://kui.im/install-python-pip -o install-python-pip
 chmod +x install-python-pip
 ./install-python-pip
 ```
+
+## Install Docker
+
+```shell
+curl -L https://kui.im/install-docker -o install-docker
+chmod +x install-docker
+./install-docker
+```
+
+## Install Docker Compose
+
+```shell
+curl -L https://kui.im/install-docker-compose -o install-docker-compose
+chmod +x install-docker-compose
+./install-docker-compose
+```
