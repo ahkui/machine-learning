@@ -13,16 +13,16 @@ apt install -y --no-install-recommends \
     build-essential \
     curl \
     git \
-    wget \
+    libatlas-base-dev \
+    libboost-all-dev \
+    libgoogle-glog-dev \
+    libhdf5-dev \
+    libopencv-dev \
     libprotobuf-dev \
     protobuf-compiler \
-    libopencv-dev \
-    libgoogle-glog-dev \
-    libboost-all-dev \
-    libhdf5-dev \
-    libatlas-base-dev \
     python-dev \
-    python3-dev
+    python3-dev \
+    wget
 
 if [ ${ENABLE_GPU} = true ]
 then

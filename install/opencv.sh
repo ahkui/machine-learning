@@ -15,26 +15,27 @@ apt install -y --no-install-recommends \
     build-essential \
     cmake \
     curl \
-    wget \
     git \
     libavcodec-dev \
     libavformat-dev \
     libdc1394-22-dev \
+    libgoogle-glog-dev \
     libgstreamer-plugins-base1.0-dev \
     libgstreamer1.0-dev \
     libgtk2.0-dev \
-    libgoogle-glog-dev \
-    libopencv-dev \
-    libhdf5-serial-dev \
     libhdf5-dev \
+    libhdf5-serial-dev \
     libjpeg-dev \
+    libopencv-dev \
     libpng-dev \
+    libprotobuf-dev \
     libswscale-dev \
     libtbb-dev \
     libtbb2 \
     libtiff-dev \
     libv4l-dev \
     pkg-config \
+    protobuf-compiler \
     python-dev \
     python-numpy \
     python3-dev \
@@ -42,7 +43,8 @@ apt install -y --no-install-recommends \
     qv4l2 \
     unzip \
     v4l-utils \
-    v4l2ucp
+    v4l2ucp \
+    wget
     # libjasper-dev
 
 mkdir -p /opt/opencv_build
