@@ -5,6 +5,8 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+export DEBIAN_FRONTEND="noninteractive"
+
 cd /tmp
 
 apt-get install -y \

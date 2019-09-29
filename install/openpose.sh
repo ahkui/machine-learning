@@ -5,6 +5,8 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+export DEBIAN_FRONTEND="noninteractive"
+
 ENABLE_GPU=${ENABLE_GPU:-false}
 OPENPOSE_MODELS_PROVIDER=${OPENPOSE_MODELS_PROVIDER:-http://posefs1.perception.cs.cmu.edu/OpenPose/models/}
 

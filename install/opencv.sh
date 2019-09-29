@@ -5,9 +5,10 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+export DEBIAN_FRONTEND="noninteractive"
+
 OPENCV_VERSION=${OPENCV_VERSION:-4.1.0}
 ENABLE_GPU=${ENABLE_GPU:-false}
-export DEBIAN_FRONTEND="noninteractive"
 
 apt-get purge *libopencv* -y
 apt update
