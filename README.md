@@ -25,3 +25,11 @@ curl -L https://kui.im/install-openpose -o install-openpose
 chmod +x install-openpose
 ./install-openpose
 ```
+
+## Install Python PIP
+
+```shell
+curl -L https://kui.im/install-python-pip -o install-python-pip
+chmod +x install-python-pip
+./install-python-pip
+```
