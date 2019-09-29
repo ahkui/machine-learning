@@ -9,13 +9,29 @@ ENABLE_GPU=${ENABLE_GPU:-false}
 OPENPOSE_MODELS_PROVIDER=${OPENPOSE_MODELS_PROVIDER:-http://posefs1.perception.cs.cmu.edu/OpenPose/models/}
 
 apt update
-apt install -y \
+apt install -y --no-install-recommends \
     build-essential \
     curl \
     git \
     wget \
+    libprotobuf-dev \
+    protobuf-compiler \
+    libopencv-dev \
+    libgoogle-glog-dev \
+    libboost-all-dev \
+    libhdf5-dev \
+    libatlas-base-dev \
     python-dev \
     python3-dev
+
+if [ ${ENABLE_GPU} = true ]
+then
+    apt install -y --no-install-recommends libcaffe-cuda-dev
+else
+    apt install -y --no-install-recommends libcaffe-cpu-dev
+fi
+
+
 
 cd /opt
 

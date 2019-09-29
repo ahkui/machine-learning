@@ -11,10 +11,11 @@ export DEBIAN_FRONTEND="noninteractive"
 
 apt-get purge *libopencv* -y
 apt update
-apt install -y \
+apt install -y --no-install-recommends \
     build-essential \
     cmake \
     curl \
+    wget \
     git \
     libavcodec-dev \
     libavformat-dev \
@@ -22,6 +23,7 @@ apt install -y \
     libgstreamer-plugins-base1.0-dev \
     libgstreamer1.0-dev \
     libgtk2.0-dev \
+    libgoogle-glog-dev \
     libopencv-dev \
     libhdf5-serial-dev \
     libhdf5-dev \
