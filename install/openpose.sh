@@ -40,15 +40,26 @@ rm cmake-3.14.2-Linux-x86_64.tar.gz
 export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 export PYTHONPATH=/usr/local/python:$PYTHONPATH
 
+sed -i '/export PYTHONPATH=\/usr\/local\/python:$PYTHONPATH/d' /etc/bash.bashrc
+echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' >> /etc/bash.bashrc
+
 if [[ -z "${BASH}" ]]
 then
+    sed -i '/export PATH="\/opt\/cmake-3.14.2-Linux-x86_64\/bin:${PATH}"/d' ~/.bashrc
     echo 'export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"' >> ~/.bashrc
+
+    sed -i '/export PYTHONPATH=\/usr\/local\/python:$PYTHONPATH/d' ~/.bashrc
     echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' >> ~/.bashrc
+
     source ~/.bashrc
 elif [[ -z "${ZSH_NAME}" ]]
 then
+    sed -i '/export PATH="\/opt\/cmake-3.14.2-Linux-x86_64\/bin:${PATH}"/d' ~/.zshrc
     echo 'export PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"' >> ~/.zshrc
+
+    sed -i '/export PYTHONPATH=\/usr\/local\/python:$PYTHONPATH/d' ~/.zshrc
     echo 'export PYTHONPATH=/usr/local/python:$PYTHONPATH' >> ~/.zshrc
+
     source ~/.zshrc
 else
     echo "Please set this environment variable 'PYTHONPATH=/usr/local/python:\$PYTHONPATH'"
