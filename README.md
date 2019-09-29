@@ -2,10 +2,10 @@
 
 ## Install OpenCV
 
-| Environment Variable | Value |
-| -------------------- | ----- |
-| ENABLE_GPU           | false |
-| OPENCV_VERSION       | 4.1.0 |
+| Environment Variable | Default Value |
+| -------------------- | ------------- |
+| ENABLE_GPU           | false         |
+| OPENCV_VERSION       | 4.1.0         |
 
 ```shell
 curl -L https://kui.im/install-opencv -o install-opencv
@@ -15,7 +15,7 @@ chmod +x install-opencv
 
 ## Install Openpose
 
-| Environment Variable     | Value                                                   |
+| Environment Variable     | Default Value                                           |
 | ------------------------ | ------------------------------------------------------- |
 | ENABLE_GPU               | false                                                   |
 | OPENPOSE_MODELS_PROVIDER | <http://posefs1.perception.cs.cmu.edu/OpenPose/models/> |
@@ -48,4 +48,16 @@ chmod +x install-docker
 curl -L https://kui.im/install-docker-compose -o install-docker-compose
 chmod +x install-docker-compose
 ./install-docker-compose
+```
+
+## Install NodeJS
+
+| Environment Variable | Default Value |
+| -------------------- | ------------- |
+| NODEJS_VERSION       | 10            |
+
+```shell
+curl -L https://kui.im/install-nodejs -o install-nodejs
+chmod +x install-nodejs
+./install-nodejs
 ```
